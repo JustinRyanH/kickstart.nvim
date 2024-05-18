@@ -22,4 +22,31 @@ return {
       { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
+  {
+    'nvim-pack/nvim-spectre',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    build = false,
+    cmd = 'Spectre',
+    opts = { open_cmd = 'noswapfile vnew' },
+    keys = {
+      {
+        '<leader>sR',
+        function()
+          require('spectre').open()
+        end,
+        desc = '[s]earch [R]eplace (Spectre)',
+      },
+    },
+  },
+  {
+    'folke/todo-comments.nvim',
+    cmd = { 'TodoTrouble', 'TodoTelescope' },
+    config = true,
+    keys = {
+      { '<leader>st', '<cmd>TodoTelescope<cr>', desc = '[s]earch [t]odo' },
+      { '<leader>sT', '<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>', desc = '[s]earch [T]odos/Fix/Fixme' },
+    },
+  },
 }
