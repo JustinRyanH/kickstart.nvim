@@ -1,3 +1,16 @@
+function InsertFullPath()
+  local filepath = vim.fn.expand '%'
+  vim.fn.setreg('+', filepath) -- write to clippoard
+end
+
+function InsertRelativePath()
+  local filepath = vim.fn.expand '%'
+  vim.fn.setreg('+', filepath) -- write to clippoard
+end
+
+vim.keymap.set('n', '<leader>dp', InsertFullPath, { desc = 'copy [d]ocument [p]ath', noremap = true, silent = true })
+vim.keymap.set('n', '<leader>dr', InsertRelativePath, { desc = 'copy [d]ocument [r]elative path', noremap = true, silent = false })
+
 -- You can add your own plugins here or in other files in this directory!
 --  I promise not to create any merge conflicts in this directory :)
 --
