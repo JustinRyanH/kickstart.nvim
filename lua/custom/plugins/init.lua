@@ -73,4 +73,7 @@ return {
       -- Your setup opts here
     },
   },
+  {
+    'almo7aya/openingh.nvim',
+  },
 }
