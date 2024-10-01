@@ -76,4 +76,7 @@ return {
   {
     'almo7aya/openingh.nvim',
   },
+  {
+    'NStefan002/screenkey.nvim',
+  },
 }
