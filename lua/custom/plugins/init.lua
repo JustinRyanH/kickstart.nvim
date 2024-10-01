@@ -73,10 +73,11 @@ return {
       -- Your setup opts here
     },
   },
-  {
-    'almo7aya/openingh.nvim',
-  },
+  { 'almo7aya/openingh.nvim' },
   {
     'NStefan002/screenkey.nvim',
+    keys = {
+      { '<leader>ts', '<cmd>Screenkey toggle<CR>', desc = '[t]oggle [s]creen key' },
+    },
   },
 }
