@@ -11,6 +11,11 @@ end
 vim.keymap.set('n', '<leader>dp', InsertFullPath, { desc = 'copy [d]ocument [p]ath', noremap = true, silent = true })
 vim.keymap.set('n', '<leader>dr', InsertRelativePath, { desc = 'copy [d]ocument [r]elative path', noremap = true, silent = false })
 
+local projectfile = vim.fn.getcwd() .. '\\project.godot'
+if vim.fn.filereadable(projectfile) == 1 then
+  vim.fn.serverstart '127.0.0.1:6004'
+end
+
 -- You can add your own plugins here or in other files in this directory!
 --  I promise not to create any merge conflicts in this directory :)
 --
@@ -79,5 +84,9 @@ return {
     keys = {
       { '<leader>ts', '<cmd>Screenkey toggle<CR>', desc = '[t]oggle [s]creen key' },
     },
+  },
+  {
+    'habamax/vim-godot',
+    event = 'VimEnter',
   },
 }
