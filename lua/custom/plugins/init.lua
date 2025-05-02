@@ -4,7 +4,7 @@ function InsertFullPath()
 end
 
 function InsertRelativePath()
-  local filepath = vim.fn.expand '%'
+  local filepath = vim.fn.expand '%:.'
   vim.fn.setreg('+', filepath) -- write to clippoard
 end
 
@@ -88,5 +88,13 @@ return {
   {
     'habamax/vim-godot',
     event = 'VimEnter',
+  },
+  {
+    'synic/refactorex.nvim',
+    ft = 'elixir',
+    opts = {
+      auto_update = true,
+      pin_version = nil,
+    },
   },
 }
