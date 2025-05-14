@@ -82,12 +82,63 @@ return {
   {
     'NStefan002/screenkey.nvim',
     keys = {
-      { '<leader>ts', '<cmd>Screenkey toggle<CR>', desc = '[t]oggle [s]creen key' },
+      { '<leader>tS', '<cmd>Screenkey toggle<CR>', desc = '[t]oggle [S]creen key' },
     },
   },
   {
     'habamax/vim-godot',
     event = 'VimEnter',
+  },
+  {
+    'nvim-neotest/neotest',
+    dependencies = {
+      'nvim-neotest/nvim-nio',
+      'nvim-lua/plenary.nvim',
+      'antoinemadec/FixCursorHold.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'jfpedroza/neotest-elixir',
+    },
+
+    config = function()
+      require('neotest').setup {
+        adapters = {
+          require 'neotest-elixir',
+        },
+      }
+    end,
+    keys = {
+      {
+        '<leader>ts',
+        function()
+          require('neotest').summary.toggle()
+        end,
+        desc = '[t]est [S]ummary',
+      },
+      {
+        '<leader>tf',
+        function()
+          require('neotest').summary.open()
+          require('neotest').run.run(vim.fn.expand '%')
+        end,
+        desc = '[t]est current [f]ile',
+      },
+      {
+        '<leader>tn',
+        function()
+          require('neotest').summary.open()
+          require('neotest').run.run()
+        end,
+        desc = '[t]est [n]earest test',
+      },
+      {
+        '<leader>tr',
+        function()
+          require('neotest').summary.open()
+          require('neotest').run.run_last()
+        end,
+        desc = '[t]est [r]ecent',
+      },
+    },
   },
   -- {
   --   'synic/refactorex.nvim',
