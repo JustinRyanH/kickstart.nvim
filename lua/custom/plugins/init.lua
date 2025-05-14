@@ -89,12 +89,12 @@ return {
     'habamax/vim-godot',
     event = 'VimEnter',
   },
-  {
-    'synic/refactorex.nvim',
-    ft = 'elixir',
-    opts = {
-      auto_update = true,
-      pin_version = nil,
-    },
-  },
+  -- {
+  --   'synic/refactorex.nvim',
+  --   ft = 'elixir',
+  --   opts = {
+  --     auto_update = true,
+  --     pin_version = nil,
+  --   },
+  -- },
 }
