@@ -1,15 +1,11 @@
 return {
-  'azorng/goose.nvim',
-  config = function()
-    require('goose').setup {}
-  end,
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    {
-      'MeanderingProgrammer/render-markdown.nvim',
-      opts = {
-        anti_conceal = { enabled = false },
-      },
+  {
+    'greggh/claude-code.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- Required for git operations
     },
+    config = function()
+      require('claude-code').setup()
+    end,
   },
 }
