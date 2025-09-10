@@ -16,6 +16,8 @@ if vim.fn.filereadable(projectfile) == 1 then
   vim.fn.serverstart '127.0.0.1:6004'
 end
 
+vim.o.expandtab = true
+
 -- You can add your own plugins here or in other files in this directory!
 --  I promise not to create any merge conflicts in this directory :)
 --
